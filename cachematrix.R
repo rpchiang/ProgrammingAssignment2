@@ -1,10 +1,10 @@
 ## Matrix inversion is usually a costly computation and there may be some
 ## benefit to caching the inverse of a matrix rather than computing it
-## repeatedly (there are also alternatives to matrix inversion that we will
-## not discuss here). Your assignment is to write a pair of functions that
-## cache the inverse of a matrix.
+## repeatedly. This file contains a pair of functions that may be used to
+## create an object that caches the inverse of the matrix alongside with the 
+## original input matrix.
 
-## This function creates a special "matrix" object
+## This function creates a matrix object
 ## that can cache its inverse.
 makeCacheMatrix <- function(x = matrix()) {
   invx <- NULL
@@ -39,3 +39,9 @@ cacheSolve <- function(x) {
   x$setinvx(invx)
   invx
 }
+
+## Testing
+## tmatrix<-matrix(c(1,2,2,1), ncol=2, nrow=2)
+## y  <- makeCacheMatrix(tmatrix)
+## z  <- cacheSolve(y)
+## z1 <- cacheSolve(y) 
